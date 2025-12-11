@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GestBI - Registo Civil</title>
+         <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="CSS/general-styles.css">
+        <link rel="stylesheet" href="CSS/midias.css">
+        <script src="JS/script.js" defer></script>
+        
+    </head>
+    <body>
+
+        <header class="site-header">
+            <nav class="nav container">
+                <div class="nav-left">
+                    <a class="logo" href="#">
+                        <span class="logotipo">BI</span>
+                        <span class="logo-text">Registo Civil</span>
+                    </a>
+                </div>
+
+                <button id="menu-toggle" class="menu-toggle"
+                    aria-label="Abrir menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        aria-hidden>
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#">Home</a></li>
+
+                    <li class="nav-item details-wrapper" id="services-wrapper">
+
+                        <details id="services-details" class="services-details">
+                            <summary class="services-summary">
+                                Serviços
+                                <span class="seta">▾</span>
+                            </summary>
+
+                            <div class="dropdown">
+                                <a href="#" class="service-link">
+                                    Marcação
+                                </a>
+                                <a href="#" class="service-link">
+                                    Informações Gerais
+                                </a>
+                                <a href="#" class="service-link">
+                                    BI para Menores
+                                </a>
+                            </div>
+                        </details>
+                    </li>
+
+                    <li><a href="#" >Sobre</a></li>
+                    <li><a href="#" >Contacto</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <a href="#" class="btn btn-marcacao" id="cta-top">Marcar
+                        agora</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="fundo">
+                    <div class="hero-inner container">
+                        <p class="online">Sistema de Agendamento Online</p>
+                        <h1 class="hero-titulo">Renove o seu
+                            <span class="bilhete">Bilhete de Identidade</span>
+                            sem filas</h1>
+                        <p class="hero-desc">
+                            Agende o seu atendimento para
+                            renovação, primeira via ou segunda via do BI em
+                            Luanda.
+                            Rápido, simples e seguro.
+                        </p>
+
+                        <div class="hero-btns">
+                            <a href="#" class="btn btn-marcacao">Marcar
+                                agora</a>
+                            <a href="#" class="btn btn-saber">Saiba mais →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERVICES -->
+            <section class="services container" id>
+                <h2>Serviços Disponíveis</h2>
+                <p class="desc">Escolha o serviço que necessita e agende o seu
+                    atendimento numa das nossas lojas de registo em Luanda.</p>
+
+                <div class="cards-grid">
+                    <article class="card card-blue">
+                        <div class="card-icon">🔄</div>
+                        <h3>Renovação de BI</h3>
+                        <p>O seu BI caducou? Agende a renovação e receba o novo
+                            documento com rapidez.</p>
+                        <a href="#" class="link-saber">Saber mais →</a>
+                    </article>
+
+                    <article class="card card-purple">
+                        <div class="card-icon">👥</div>
+                        <h3>BI para Menores</h3>
+                        <p>Atendimento prioritário e especializado para crianças
+                            e adolescentes.</p>
+                        <a href="#" class="link-saber">Saber mais →</a>
+                    </article>
+
+                    <article class="card card-orange">
+                        <div class="card-icon">📄</div>
+                        <h3>Segunda Via</h3>
+                        <p>Perdeu o seu BI? Solicite a segunda via do seu
+                            documento.</p>
+                        <a href="#" class="link-saber">Saber mais →</a>
+                    </article>
+
+                    <article class="card card-green">
+                        <div class="card-icon">🧑‍💼</div>
+                        <h3>Cidadania</h3>
+                        <p>Serviços relacionados à cidadania e registos.</p>
+                        <a href="#" class="link-saber">Saber mais →</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- BENEFÍCIOS -->
+            <section class="beneficios container">
+                <h2>Porquê agendar o seu atendimento?</h2>
+                <p class="lead">O nosso sistema de marcação online foi criado
+                    para facilitar a vida dos cidadãos, reduzindo o tempo de
+                    espera e garantindo um atendimento mais eficiente e
+                    organizado.</p>
+
+                <div class="beneficios-grid">
+                    <div class="beneficio">
+                        <div class="beneficio-icon">⏱️</div>
+                        <div>
+                            <h4>Poupança de Tempo</h4>
+                            <p>Evite as longas filas de espera. Chegue apenas na
+                                hora marcada.</p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio">
+                        <div class="beneficio-icon">✔</div>
+                        <div>
+                            <h4>Conveniência</h4>
+                            <p>Marque a partir de casa ou do trabalho, através
+                                do computador ou telemóvel.</p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio">
+                        <div class="beneficio-icon">🔒</div>
+                        <div>
+                            <h4>Segurança</h4>
+                            <p>Processo transparente e seguro, com confirmação
+                                imediata.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER --> 
+        <footer class="site-footer">
+            <section class="container-footer footer-grid">
+                <div>
+                    <h4>Registo Civil</h4>
+                    <p>Sistema de gestão de marcação para renovação de Bilhete
+                        de Identidade em Luanda.</p>
+                </div>
+
+                <div class="footer_card">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Agendar</a></li>
+                        <li><a href="#">Informações</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer_card">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#">Renovação de BI</a></li>
+                        <li><a href="#">BI para Menores</a></li>
+                        <li><a href="#">Segunda Via</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="footer_card">
+                    <h4>Contacto</h4>
+                    <address>
+                        Rua do Mufulama, Luanda, Angola<br>
+                        <a
+                            href="mailto:gestbiregistocivil@gmail.com">gestbiregistocivil@gmail.com</a><br>
+                        <a href="tel:+244 923000000">+244 950 000 000</a>
+                    </address>
+                </div>
+            </section>
+
+            <div class="footer-bottom">
+                © 2025 Registo Civil Angola. Todos os direitos reservados.
+            </div>
+        </footer>
+
+    </body>
+</html>

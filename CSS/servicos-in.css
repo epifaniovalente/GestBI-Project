@@ -1,0 +1,82 @@
+:root {
+    --gap-0: 0px;
+    --gap-8: 8px;
+    --gap-12: 12px;
+    --gap-16: 16px;
+    --gap-24: 24px;
+    --gap-32: 32px;
+
+    --text-12: 12px;
+    --text-14: 14px;
+    --text-16: 16px;
+    --text-18: 18px;
+    --text-20: 20px;
+    --text-24: 24px;
+    --text-32: 32px;
+    --text-44: 44px;
+    --text-60: 60px;
+
+    --red: #DC2626;
+    --green: #16A34A;
+    --blue: #2563AB;
+    --purple: #9333EA;
+    --orange: #EA580C;
+    --dark: #111827;
+    --gray: #797F8C;
+    --back-1: #F2F7F9;
+    --back-0: #FBFDFD;
+    --text-gray: #4B5563;
+    --text-gray-light: #D1D5DB;
+
+    --bg: #f5f5f5;
+    --text: #111827;
+    --muted: #6b7280;
+    --accent: #e53935;
+    /* vermelho */
+    --dark: #0b1220;
+    --container: 1200px;
+    --radius: 10px;
+}
+
+/* main {
+    align-items: center;
+    min-height: 100vh;
+    max-width: 1224px;
+    margin: auto;
+}
+
+main h1 {
+    padding: 1rem;
+    color: var(--red);
+    text-align: center;
+}
+
+main section {
+    width: 100%;
+    height: 600px;
+    background: url('../IMG/frontend-dev.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+} */
+
+
+/* --------- INFORMACOES GERAIS -------- */
+
+.Informacoes {
+    background-color: var(--dark);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hero-titulo {
+    color: var(--bg);
+    font-size: 44px;
+    font-weight: 600;
+}
+
+.Informacoes .desc-informacoes {
+    max-width: 768px;
+    color: var(--muted);
+}

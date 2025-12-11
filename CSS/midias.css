@@ -1,0 +1,90 @@
+/* ---------- RESPONSIVIDADE ---------- */
+
+/* small screens */
+@media screen and (max-width:992px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+/* mobile nav behaviour */
+@media screen and (max-width:860px) {
+
+    .hero-btns {
+        justify-content: center;
+    }
+
+    .hero-btns a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: inline-flex
+    }
+
+    .nav-menu {
+        position: fixed;
+        inset: 68px 20px auto 20px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 14px;
+        flex-direction: column;
+        gap: 10px;
+        transform: translateY(-8px) scale(.98);
+        box-shadow: 0 18px 60px rgba(10, 10, 10, 0.2);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .22s ease, transform .22s ease;
+        z-index: 60;
+    }
+
+    .nav-menu.open {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+    }
+
+    .nav-right {
+        display: none
+    }
+
+    .nav {
+        padding: 8px;
+    }
+
+    .hero-titulo {
+        font-size: 32px
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr
+    }
+
+    .logo-text {
+        display: none
+    }
+
+    /* services panel mobile inside menu */
+    .dropdown {
+        position: static;
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+        box-shadow: none;
+        background: transparent;
+        padding: 0;
+    }
+
+    .services-details summary {
+        padding: 8px 6px
+    }
+}
