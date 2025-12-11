@@ -111,7 +111,8 @@ body {
     display: none;
 }
 
-.menu-toggle svg {
+.menu-toggle i {
+    font-size: 20px;
     color: var(--dark)
 }
 

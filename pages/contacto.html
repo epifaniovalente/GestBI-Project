@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fale Connosco - Registo Civil</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../CSS/sobre_contacto.css" />
+        <link rel="stylesheet" href="../CSS/general-styles.css" />
+        <link rel="stylesheet" href="../CSS/midias.css" />
+
+        <script src="../JS/script.js" defer></script>
+    </head>
+
+    <body>
+
+        <header class="site-header">
+            <nav class="nav container">
+                <div class="nav-left">
+                    <a class="logo" href="#">
+                        <span class="logotipo">BI</span>
+                        <span class="logo-text">Registo Civil</span>
+                    </a>
+                </div>
+
+                <button id="menu-toggle" class="menu-toggle"
+                    aria-label="Abrir menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../index.html" target="_self+">Home</a></li>
+
+                    <li class="nav-item details-wrapper" id="services-wrapper">
+
+                        <details id="services-details" class="services-details">
+                            <summary class="services-summary">
+                                Serviços
+                                <span class="seta">▾</span>
+                            </summary>
+
+                            <div class="dropdown">
+                                <a href="marcacao.html" class="service-link">
+                                    Marcação
+                                </a>
+                                <a href="#" class="service-link">
+                                    Informações Gerais
+                                </a>
+                                <a href="#" class="service-link">
+                                    BI para Menores
+                                </a>
+                            </div>
+                        </details>
+                    </li>
+
+                    <li><a href="about.html">Sobre</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <a href="#" class="btn btn-marcacao" id="cta-top">Marcação</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+
+            <!-- --------- FALE CONNOSCO -------- -->
+            <section class="contacto container">
+                <h1 class="hero-titulo">Fale Connosco</h1>
+                <p class="desc-contacto">
+                    Tem dúvida sobre o agendamento ou precisa de mais
+                    informações? Estamos aqui para ajudar.
+                </p>
+            </section>
+
+            <!-- CONTACTOS + FORMULÁRIO -->
+            <section class="contacto-area container">
+                <div class="contacto-info">
+
+                    <div class="info-block">
+                        <div class="icon blue">
+                            <!-- Map icon -->
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <h3>Endereço Principal</h3>
+                            <p>Rua de tal, nº xxx, Benfica,<br>Luanda,
+                                Angola</p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="icon">
+                            <!-- Email icon -->
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div>
+                            <h3>E-mail</h3>
+                            <p>gestbiregistocivil@gmail.com<br>suporte@registocivil.ao</p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="icon">
+                            <!-- Phone icon -->
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div>
+                            <h3>Telefones</h3>
+                            <p>+244 923 000 000 (Geral)<br>+244 222 000 000
+                                (Fixo)</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- FORMULÁRIO -->
+                <form class="contact-form" id="formMensagem">
+                    <h2><i class="fa-regular fa-message"></i> Envie uma
+                        Mensagem</h2>
+
+                    <div class="form-input">
+                        <label>Seu nome</label>
+                        <input type="text" id="nome" placeholder="fulano" required>
+                        <span id="error_name" class="error"></span>
+                    </div>
+
+                    <div class="form-input">
+                        <label>E-mail</label>
+                        <input type="email" id="email"
+                            placeholder="fulano@exemplo.com" required>
+                        <span id="error_email" class="error"></span>
+                    </div>
+
+                    <div class="form-input">
+                        <label>Assunto</label>
+                        <select id="assunto" required>
+                            <option value>Selecione seu assunto</option>
+                            <option value="agendamento">Agendamento</option>
+                            <option value="renovacao">Renovação de BI</option>
+                            <option value="suporte">Suporte Técnico</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                        <span id="error_assunto" class="error"></span>
+                    </div>
+                    <div class="form-input">
+
+                        <label>Mensagem</label>
+                        <textarea id="mensagem"
+                            placeholder="Escreva sua mensagem aqui..." required>
+                        </textarea>
+                        <span id="error_sms" class="error"></span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enviar
+                        mensagem</button>
+                </form>
+            </section>
+        </main>
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <section class="container-footer footer-grid">
+                <div>
+                    <h4>Registo Civil</h4>
+                    <p>Sistema de gestão de marcação para renovação de Bilhete
+                        de Identidade em Luanda.</p>
+                </div>
+
+                <div class="footer_card">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Agendar</a></li>
+                        <li><a href="#">Informações</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer_card">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#">Renovação de BI</a></li>
+                        <li><a href="#">BI para Menores</a></li>
+                        <li><a href="#">Segunda Via</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="footer_card">
+                    <h4>Contacto</h4>
+                    <address>
+                        Rua do Mufulama, Luanda, Angola<br>
+                        <a
+                            href="mailto:gestbiregistocivil@gmail.com">gestbiregistocivil@gmail.com</a><br>
+                        <a href="tel:+244 923000000">+244 950 000 000</a>
+                    </address>
+                </div>
+            </section>
+
+            <div class="footer-bottom">
+                © 2025 Registo Civil Angola. Todos os direitos reservados.
+            </div>
+        </footer>
+
+        <script>
+            const formulario = document.getElementById("formMensagem");
+
+
+            formulario.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                const nome = document.getElementById("nome").value;
+                const error_name = document.getElementById("error_name");
+                
+                if (nome.value === 0) {
+                    error_name.textContent = "Preencha..."
+                }
+            })
+        </script>
+    </body>
+</html>

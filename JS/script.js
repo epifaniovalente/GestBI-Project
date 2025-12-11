@@ -32,3 +32,19 @@ document.addEventListener('keydown', (letra) => {
 
     }
 })
+
+// --------- VALIDAÇÃO DO FORMULÁRIO ---------
+
+// const formulario = document.getElementById("formMensagem");
+
+
+// formulario.addEventListener("submit", (event) => {
+//     event.preventDefault();
+
+//     const nome = document.getElementById("nome").value;
+//     const error_name = document.getElementById("error_name");
+
+//     if (nome.value === 0) {
+//         error_name.textContent = "Preencha..."
+//     }
+// })

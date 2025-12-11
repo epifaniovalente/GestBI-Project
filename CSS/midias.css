@@ -18,6 +18,10 @@
 /* mobile nav behaviour */
 @media screen and (max-width:860px) {
 
+    .container{
+        padding: 44px 8px;
+    }
+
     .hero-btns {
         justify-content: center;
     }
@@ -86,5 +90,13 @@
 
     .services-details summary {
         padding: 8px 6px
+    }
+
+    .contacto-area {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contact-form{
+        padding: 24px 8px;
     }
 }

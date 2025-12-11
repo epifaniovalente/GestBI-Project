@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informações Gerais</title>
-    <link rel="stylesheet" href="../CSS/general-styles.css">
-    <link rel="stylesheet" href="../CSS/servicos-in.css">
-    <link rel="stylesheet" href="../CSS/midias.css">
-    <script src="../JS/script.js" defer></script>
-</head>
-<body>
-    
-    <!-- HEADER -->
+<html lang="pt-PT">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Verificar Marcação - Registo Civil</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../CSS/general-styles.css">
+        <link rel="stylesheet" href="../CSS/servicos-in.css">
+        <link rel="stylesheet" href="../CSS/midias.css">
+        <script src="../JS/script.js" defer></script>
+
+        <style>
+            
+        </style>
+    </head>
+    <body>
+
         <header class="site-header">
             <nav class="nav container">
                 <div class="nav-left">
@@ -23,15 +30,11 @@
 
                 <button id="menu-toggle" class="menu-toggle"
                     aria-label="Abrir menu">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        aria-hidden>
-                        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" />
-                    </svg>
+                    <i class="fa-solid fa-bars"></i>
                 </button>
 
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="../index.html" target="_self">Home</a></li>
 
                     <li class="nav-item details-wrapper" id="services-wrapper">
 
@@ -42,7 +45,7 @@
                             </summary>
 
                             <div class="dropdown">
-                                <a href="#" class="service-link">
+                                <a href="marcacao.html" class="service-link">
                                     Marcação
                                 </a>
                                 <a href="#" class="service-link">
@@ -55,33 +58,54 @@
                         </details>
                     </li>
 
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="about.html" target="_self">Sobre</a></li>
+                    <li><a href="contacto.html" target="_self">Contacto</a></li>
                 </ul>
 
                 <div class="nav-right">
-                    <a href="#" class="btn btn-marcacao" id="cta-top">Marcar
-                        agora</a>
+                    <a href="marcacao.html" class="btn btn-marcacao" id="cta-top">
+                        Marcação
+                    </a>
                 </div>
             </nav>
         </header>
 
-
-        <main>
-
-               <!-- INFORMAÇÕES GERAIS -->
-            <section class="Informacoes container">
-                <h1 class="hero-titulo">Informações Gerais</h1>
-                <p class="desc-informacoes">
-                    Aqui encontra todas as informações necessárias sobre os serviços relacionados desde a renovação, segunda-via do Bilhete de Identidade, incluindo documentos, prazos, taxas e orientações gerais.
-                </p>
+        <main class="verification-container">
+            <section class="marcacao container">
+                <h1 class="hero-titulo">Marcação Automática</h1>
+                <p class="">O nosso sistema de validação vai verificar o estado do seu BI
+                    se há disponibilidade e atribui a melhor data para si.</p>
             </section>
 
+            <section class="verificacao-card container">
 
+                <div class="verification-icon-box">
+                    <i class="fas fa-search"></i>
+                </div>
 
+                <h2>Verificar Marcação</h2>
+
+                <p class="verificacao-desc">
+                    Insira o número do seu Bilhete de Identidade para que o
+                    sistema possa verificar o seu processo e atribuir uma data.
+                </p>
+
+                <form action="#" method="POST" class="verificacao-form">
+                    <div class="form-group">
+                        <label for="numeroBi">Número de BI</label>
+                        <input type="text" id="numeroBi" name="numeroBi"
+                            placeholder="Ex.: 000000000LA00" required>
+                        <p class="input-infor">O número deve conter 14 caracteres
+                            (9 dígitos, 2 letras, 3 dígitos).</p>
+                    </div>
+
+                    <button type="submit" class="verify-button">Verificar
+                        BI</button>
+                </form>
+            </section>
         </main>
 
-        <!-- FOOTER --> 
+        <!-- FOOTER -->
         <footer class="site-footer">
             <section class="container-footer footer-grid">
                 <div>
@@ -126,5 +150,5 @@
             </div>
         </footer>
 
-</body>
+    </body>
 </html>

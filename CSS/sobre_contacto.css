@@ -4,18 +4,17 @@
     --text: #111827;
     --muted: #6b7280;
     --accent: #e53935;
+    --blue: #2563eb;
     /* vermelho */
     --dark: #0b1220;
     --container: 1200px;
     --radius: 10px;
 }
 
-section.sobre-projeto {
+section.sobre-projeto{
     background-color: var(--dark);
 
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
     gap: 16px;
 }
@@ -28,7 +27,6 @@ section.sobre-projeto {
 
 section.sobre-projeto .desc-projeto {
     max-width: 768px;
-    text-align: center;
     color: var(--muted);
 }
 
@@ -160,4 +158,124 @@ section.equipa {
     max-width: 768px;
     margin: auto;
     color: var(--muted);
+}
+
+
+
+
+/* ----- FALE CONNOSCO --------*/
+
+ .contacto{
+    background-color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+ }
+
+.desc-contacto{
+    max-width: 768px;
+    color: var(--muted);
+}
+
+/* CONTACT AREA */
+.contacto-area {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.info-block {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.info-block h3{
+    color: var(--text);
+}
+
+.info-block p{
+    color: var(--muted);
+    font-size: 14px
+}
+
+.icon {
+    background: #e0ebff;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon i{
+    color: var(--blue);
+}
+
+/* FORM */
+.contact-form {
+    background: var(--bg-white);
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.contact-form h2 {
+    color: var(--text);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.contact-form h2 i{
+    color: var(--blue);
+}
+
+.contact-form label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-top: 12px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    outline: none;
+}
+
+textarea {
+    height: 120px;
+}
+
+.error{
+    font-size: small;
+    color: var(--accent);
+    margin-left: 1em;
+}
+
+.btn-submit {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    background: var(--blue);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+
+    transition: scale .3s ease-in-out;
+}
+
+.btn-submit:active{
+    scale: .9;
 }
