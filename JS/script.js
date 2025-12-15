@@ -33,7 +33,9 @@ document.addEventListener('keydown', (letra) => {
     }
 })
 
-// --------- VALIDAÇÃO DO FORMULÁRIO ---------
+
+
+// --------- VALIDAÇÃO DO FORMULÁRIO CONTACTO ---------
 
 // variaveis de error
 const error_name = document.getElementById("error_name");
@@ -49,14 +51,14 @@ function validarform(event) {
     const assunto = document.getElementById('assunto');
 
     if (nome.value === '') {
-        error_name.textContent ='Digite seu nome.';
-    }else{
-        error_name.textContent ='';
+        error_name.textContent = 'Digite seu nome.';
+    } else {
+        error_name.textContent = '';
     }
     if (email.value === '') {
-        error_email.textContent ='Digite seu email.';
-    }else{
-        error_email.textContent ='';
+        error_email.textContent = 'Digite seu email.';
+    } else {
+        error_email.textContent = '';
     }
 
 
@@ -67,3 +69,103 @@ function validarform(event) {
     }
 
 }
+
+
+// --------------- TROCA DE FORMULARIOS ------------------
+
+const verificarBtn = document.getElementById("verificarBtn");
+const cancelarBtn = document.getElementById("cancelarBtn");
+const verificarForm = document.getElementById("verificarForm")
+const cancelarForm = document.getElementById("cancelarForm")
+
+
+verificarBtn.onclick = () => {
+    verificarBtn.classList.add("activo")
+    cancelarBtn.classList.remove("activo")
+    verificarForm.classList.add("activo")
+    cancelarForm.classList.remove("activo")
+}
+
+cancelarBtn.addEventListener("click", () => {
+    cancelarBtn.classList.add("activo")
+    verificarBtn.classList.remove("activo")
+    verificarForm.classList.remove("activo")
+    cancelarForm.classList.add("activo")
+})
+
+
+
+
+// --------- VALIDAÇÃO DO FORMULÁRIO DE VERIFICAR BI ---------
+
+function validarBI(numeroBi) {
+    if (numeroBi.length < 14 || numeroBi.length > 14) return false;
+    if (!/[0-9]/.test(numeroBi)) return false;
+    if (!/[A-Z]/.test(numeroBi)) return false;
+
+    return true;
+}
+
+function verficar(event) {
+    event.preventDefault();
+    const numeroBi = document.getElementById("numeroBi").value;
+    const numBi = document.querySelector(".numeroBi")
+    const detalhe = document.getElementById("detalhe");
+
+    if (validarBI(numeroBi)) {
+        detalhe.classList.remove("aviso")
+        numeroBi.classList.remove("aviso")
+    } else {
+        detalhe.classList.add("aviso")
+        numBi.classList.add("aviso")
+    }
+
+}
+
+
+// --------- VALIDAÇÃO DO FORMULÁRIO DE CANCELAR MARCAÇÃO ---------
+
+function validarRef(numeroRef) {
+    if (numeroRef.length < 4 || numeroRef.length > 4) return false;
+    if (!/[0-9]/.test(numeroRef)) return false;
+
+    return true;
+}
+
+function cancelar(event) {
+    event.preventDefault();
+    const numeroRef = document.getElementById("numeroRef").value;
+    const infor_ref = document.getElementById("infor_ref");
+
+    const resultado = document.getElementById("resultado");
+    const h4 = document.getElementById("h4");
+    const p = document.getElementById("p");
+
+    // let codigo = Math.floor(1000 + Math.random() * 9000);
+
+    let codigo = 1000;
+
+    if (validarRef(numeroRef)) {
+        infor_ref.classList.remove("aviso")
+        resultado.classList.add("NaoCancelado")
+        resultado.classList.add("ok")
+        h4.textContent = "Referência Não Encontrada"
+        p.textContent = "Verifique o número e tente novamente!"
+
+        if (numeroRef == codigo) {
+            resultado.classList.remove("NaoCancelado")
+            resultado.classList.add("cancelado")
+            h4.textContent = "Marcação Cancelada com sucesso"
+            p.textContent = "A marcação de fulano para o dia 22 de Dezembro foi removida."
+        } else {
+            resultado.classList.remove("cancelado")
+            resultado.classList.add("NaoCancelado")
+        }
+    } else {
+        infor_ref.classList.add("aviso")
+        resultado.classList.remove("ok")
+        h4.textContent = "";
+        p.textContent = "";
+    }
+}
+

@@ -12,10 +12,6 @@
         <link rel="stylesheet" href="../CSS/servicos-in.css">
         <link rel="stylesheet" href="../CSS/midias.css">
         <script src="../JS/script.js" defer></script>
-
-        <style>
-            
-        </style>
     </head>
     <body>
 
@@ -76,31 +72,60 @@
                 <p class="">O nosso sistema de validação vai verificar o estado do seu BI
                     se há disponibilidade e atribui a melhor data para si.</p>
             </section>
-
-            <section class="verificacao-card container">
-
-                <div class="verification-icon-box">
-                    <i class="fas fa-search"></i>
+            
+            <section class="verificacao-card ">
+                <div class="btns-trocar-form">
+                    <button id="verificarBtn" class="activo verificar">Nova Marcação</button>
+                    <button id="cancelarBtn" class="cancelar">Cancelar Marcação</button>
                 </div>
 
-                <h2>Verificar Marcação</h2>
-
-                <p class="verificacao-desc">
-                    Insira o número do seu Bilhete de Identidade para que o
-                    sistema possa verificar o seu processo e atribuir uma data.
-                </p>
-
-                <form action="#" method="POST" class="verificacao-form">
+                
+                <form action="#" method="POST" id="verificarForm" class="verificacao form activo" onsubmit="return verficar(event)">
+                    <div class="verification-icon-box">
+                        <i class="fas fa-search"></i>
+                    </div>
+    
+                    <h2>Verificar Marcação</h2>
+    
+                    <p class="verificacao-desc">
+                        Insira o número do seu Bilhete de Identidade para que o
+                        sistema possa verificar o seu processo e atribuir uma data.
+                    </p>
                     <div class="form-group">
                         <label for="numeroBi">Número de BI</label>
-                        <input type="text" id="numeroBi" name="numeroBi"
-                            placeholder="Ex.: 000000000LA00" required>
-                        <p class="input-infor">O número deve conter 14 caracteres
+                        <input type="text" id="numeroBi" class="numeroBi" name="numeroBi"
+                            placeholder="Ex.: 000000000LA00" maxlength="14" minlength="14">
+                        <p class="input-infor" id="detalhe">O número deve conter 14 caracteres
                             (9 dígitos, 2 letras, 3 dígitos).</p>
                     </div>
 
-                    <button type="submit" class="verify-button">Verificar
-                        BI</button>
+                    <button type="submit" class="verify-button">
+                        Verificar BI
+                    </button>
+                </form>
+
+                
+                <form action="#" method="POST" id="cancelarForm" class="cancelar form" onsubmit="return cancelar(event)" autocomplete="off">
+                    <div class="verification-icon-box">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h2>Cancelar Marcação</h2>
+                    <p class="cancelar-desc">
+                        Insira o número de refecência do seu comprovativo para cancelar.
+                    </p>
+                    <div class="form-group">
+                        <label for="numeroRef">Numero de Referencia</label>
+                        <input type="number" name="numeroRef" id="numeroRef" placeholder="ex.: 1234" maxlength="4" minlength="4">
+                        <p class="infor_ref" id="infor_ref">O numero deve conter 4 caracteres numéricos!</p>
+                    </div>
+                    <button type="submit" class="cancelar-btn">
+                        Pesquisar e Cancelar
+                    </button>
+
+                    <div id="resultado">
+                        <h4 id="h4"></h4>
+                        <p id="p"></p>
+                    </div>
                 </form>
             </section>
         </main>
