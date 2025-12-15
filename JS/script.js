@@ -35,16 +35,35 @@ document.addEventListener('keydown', (letra) => {
 
 // --------- VALIDAÇÃO DO FORMULÁRIO ---------
 
-// const formulario = document.getElementById("formMensagem");
+// variaveis de error
+const error_name = document.getElementById("error_name");
+const error_email = document.getElementById("error_email");
+const error_assunto = document.getElementById("error_assunto");
 
 
-// formulario.addEventListener("submit", (event) => {
-//     event.preventDefault();
+function validarform(event) {
+    event.preventDefault();
 
-//     const nome = document.getElementById("nome").value;
-//     const error_name = document.getElementById("error_name");
+    const nome = document.getElementById('nome');
+    const email = document.getElementById('email');
+    const assunto = document.getElementById('assunto');
 
-//     if (nome.value === 0) {
-//         error_name.textContent = "Preencha..."
-//     }
-// })
+    if (nome.value === '') {
+        error_name.textContent ='Digite seu nome.';
+    }else{
+        error_name.textContent ='';
+    }
+    if (email.value === '') {
+        error_email.textContent ='Digite seu email.';
+    }else{
+        error_email.textContent ='';
+    }
+
+
+    if (assunto.value === '' || assunto.value === 0) {
+        error_assunto.textContent = 'Por favor, selecione um assunto!'
+    } else {
+        error_assunto.textContent = ''
+    }
+
+}
