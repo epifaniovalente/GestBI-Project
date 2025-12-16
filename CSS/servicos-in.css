@@ -180,7 +180,7 @@ input[type="number"] {
     border-radius: 4px;
 }
 
-.form input.numeroBi.aviso{
+.form input.numeroBi.aviso {
     border: 1px dashed var(--accent);
 }
 
@@ -192,20 +192,22 @@ input[type="number"] {
     color: var(--muted);
 }
 
-.input-infor, #infor_ref {
+.input-infor,
+#infor_ref {
     font-size: 12px;
     color: var(--muted);
     margin-top: 5px;
 }
 
 
-#detalhe.aviso, #infor_ref.aviso{
+#detalhe.aviso,
+#infor_ref.aviso {
     color: var(--accent);
     font-weight: 500;
 }
 
 
-#detalhe.aviso::after{
+#detalhe.aviso::after {
     content: "*";
     color: var(--accent);
 }
@@ -227,7 +229,7 @@ input[type="number"] {
 }
 
 .verify-button:active,
-.cancelar-btn:active {
+.cancelar-btn:active, #confirmarMarcacao:active, #cancelarMarcacao:active {
     scale: .9;
 }
 
@@ -247,7 +249,7 @@ input[type="number"] {
     transition: scale .3s ease-in-out;
 }
 
-#resultado{
+#resultado {
     margin-top: 1em;
     border-radius: 8px;
     padding: 12px;
@@ -257,41 +259,211 @@ input[type="number"] {
     animation: surgir .3s ease-in-out;
 }
 
-#resultado.NaoCancelado.ok{
+#resultado.NaoCancelado.ok {
     background-color: rgba(255, 9, 5, 0.123);
     border: 1px solid #e53835a6;
     display: block;
 
-    h4{
-    color: var(--accent);
-    font-weight: 500;
+    h4 {
+        color: var(--accent);
+        font-weight: 500;
     }
 
-    p{
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-}
+    p {
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
 }
 
-#resultado.cancelado.ok{
+#resultado.cancelado.ok {
     background-color: rgba(0, 255, 94, 0.123);
     border: 1px solid #16a34aa4;
     display: block;
 
-        h4{
-    color: var(--green);
-    font-weight: 500;
+    h4 {
+        color: var(--green);
+        font-weight: 500;
     }
 
-    p{
-    color: var(--green);
-    font-size: 12px;
-    font-weight: 400;
+    p {
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+}
+
+
+
+/* ---------- DADOS DO CIDADÃO ----------*/
+
+#dados-cidadao {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+
+    animation: surgir .3s ease-in-out;
+
+    display: none;
+}
+
+#dados-cidadao.verDados{
+    display: block;
+}
+
+#dados-cidadao .div-cont {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#dados-cidadao h3 {
+    background-color: var(--dark);
+    color: var(--back-0);
+    text-align: left;
+    padding: 8px;
+}
+
+.resutadoBi {
+    background-color: rgba(0, 255, 94, 0.103);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.resultadoBi_titulo{
+    font-weight: 500;
+    color: #16A34A;
+}
+
+.content_res{
+    color: #16A34A;
+    font-size: small;
+}
+
+/* ------- RESULTADO DE BI CADUCADO ------- */
+
+.resutadoBi.caducado{
+    background-color: rgba(255, 9, 5, 0.123);
+}
+
+.resultadoBi_titulo.caducado-t{
+    color: red;
+}
+
+.content_res.caducado-c{
+    color: rgba(255, 9, 5, 0.774);
+}
+
+
+
+.dadosBi {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.form-group-bi{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-bi label{
+    color: var(--muted);
+    font-size: small;
+}
+
+.form-group-bi span{
+    font-size: small;
     letter-spacing: 1px;
+    color: var(--text);
+    font-weight: 500;
 }
+
+article#validade{
+    border-top: 1px solid var(--muted);
+    padding: 8px 0;
 }
+
+#impossivel{
+    color: var(--accent);
+    text-align: center;
+    margin-top: 8px;
+    font-weight: 500;
+    font-size: small;
+}
+
+#voltar{
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 6px;
+    border-radius: 12px;
+    border: 1px solid var(--muted);
+}
+
+/* -------- PROPOSTA DE AMRCAÇAO -------- */
+
+
+#proposta{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    
+    display: none;
+}
+
+#proposta.activo{
+    display: block;
+}
+
+#proposta .form_group-proposta{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 8px;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        color: var(--muted);
+    }
+}
+
+#proposta label{
+    color: var(--blue);
+    font-size: small;
+    font-weight: 500;
+
+}
+
+#proposta button{
+    padding: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: medium;
+    font-weight: 500;
+
+    transition: scale .3s ease-in-out;
+}
+
+#confirmarMarcacao{
+    background-color: #16A34A;
+    color: var(--back-0);
+}
+#cancelarMarcacao{
+    color: var(--muted);
+}
+
+
+
+
 
 
 /* --------- INFORMACOES GERAIS -------- */

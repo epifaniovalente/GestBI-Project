@@ -112,13 +112,40 @@ function verficar(event) {
     const numBi = document.querySelector(".numeroBi")
     const detalhe = document.getElementById("detalhe");
 
+    const dados_cidadao = document.getElementById("dados-cidadao");
+    const resutadoBi = document.getElementById("resutadoBi")
+    const resultadoBi_titulo = document.querySelector(".resultadoBi_titulo")
+    const content_res = document.querySelector(".content_res")
+    const proposta = document.getElementById("proposta")
+
+    let nifEx = "000000000LA000";
+    let nif = "111111111LA111";
+
     if (validarBI(numeroBi)) {
         detalhe.classList.remove("aviso")
-        numeroBi.classList.remove("aviso")
+        numBi.classList.remove("aviso")
     } else {
         detalhe.classList.add("aviso")
         numBi.classList.add("aviso")
     }
+
+    // ------BI VALIDO ------- //
+    if (numeroBi === nifEx) {
+        dados_cidadao.classList.add("verDados")
+        verificarForm.classList.remove("activo")
+    }
+
+    // ------BI CADUCADO ------- //
+    if (numeroBi === nif) {
+        dados_cidadao.classList.add("verDados")
+        verificarForm.classList.remove("activo")
+
+        resutadoBi.classList.add("caducado")
+        resultadoBi_titulo.classList.add("caducado-t")
+        content_res.classList.add("caducado-c")
+        proposta.classList.add("activo")
+    }
+
 
 }
 
@@ -169,3 +196,10 @@ function cancelar(event) {
     }
 }
 
+
+
+// --------- PROPOSTA DE MARCACAO ----------
+
+function espostaMarcacao(event){
+    event.preventDefault();
+}

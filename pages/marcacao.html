@@ -59,7 +59,8 @@
                 </ul>
 
                 <div class="nav-right">
-                    <a href="marcacao.html" class="btn btn-marcacao" id="cta-top">
+                    <a href="marcacao.html" class="btn btn-marcacao"
+                        id="cta-top">
                         Marcação
                     </a>
                 </div>
@@ -69,33 +70,41 @@
         <main class="verification-container">
             <section class="marcacao container">
                 <h1 class="hero-titulo">Marcação Automática</h1>
-                <p class="">O nosso sistema de validação vai verificar o estado do seu BI
+                <p class>O nosso sistema de validação vai verificar o estado do
+                    seu BI
                     se há disponibilidade e atribui a melhor data para si.</p>
             </section>
-            
+
             <section class="verificacao-card ">
                 <div class="btns-trocar-form">
-                    <button id="verificarBtn" class="activo verificar">Nova Marcação</button>
-                    <button id="cancelarBtn" class="cancelar">Cancelar Marcação</button>
+                    <button id="verificarBtn" class="activo verificar">Nova
+                        Marcação</button>
+                    <button id="cancelarBtn" class="cancelar">Cancelar
+                        Marcação</button>
                 </div>
 
-                
-                <form action="#" method="POST" id="verificarForm" class="verificacao form activo" onsubmit="return verficar(event)">
+                <form action="#" method="POST" id="verificarForm"
+                    class="verificacao form activo"
+                    onsubmit="return verficar(event)">
                     <div class="verification-icon-box">
                         <i class="fas fa-search"></i>
                     </div>
-    
+
                     <h2>Verificar Marcação</h2>
-    
+
                     <p class="verificacao-desc">
                         Insira o número do seu Bilhete de Identidade para que o
-                        sistema possa verificar o seu processo e atribuir uma data.
+                        sistema possa verificar o seu processo e atribuir uma
+                        data.
                     </p>
                     <div class="form-group">
                         <label for="numeroBi">Número de BI</label>
-                        <input type="text" id="numeroBi" class="numeroBi" name="numeroBi"
-                            placeholder="Ex.: 000000000LA00" maxlength="14" minlength="14">
-                        <p class="input-infor" id="detalhe">O número deve conter 14 caracteres
+                        <input type="text" id="numeroBi" class="numeroBi"
+                            name="numeroBi"
+                            placeholder="Ex.: 000000000LA00" maxlength="14"
+                            minlength="14">
+                        <p class="input-infor" id="detalhe">O número deve conter
+                            14 caracteres
                             (9 dígitos, 2 letras, 3 dígitos).</p>
                     </div>
 
@@ -104,19 +113,115 @@
                     </button>
                 </form>
 
-                
-                <form action="#" method="POST" id="cancelarForm" class="cancelar form" onsubmit="return cancelar(event)" autocomplete="off">
+                <section id="dados-cidadao">
+                    <h3>
+                        Dados do Cidadão
+                    </h3>
+
+                    <div class="div-cont">
+
+                        <article class="resutadoBi " id="resutadoBi">
+                            <p class="resultadoBi_titulo ">
+                                Bilhete de Identidade
+                                Válido
+                            </p>
+                            <span class="content_res">
+                                O seu documento
+                                ainda está no prazo de validade. Não necessita
+                                de renovação neste momento.
+                            </span>
+                        </article>
+
+                        <article class="dadosBi">
+                            <div class="form-group-bi">
+                                <label for="nome">Nome Completo</label>
+                                <span>Cidadão exemplo da silva</span>
+                            </div>
+                            <div class="form-group-bi">
+                                <label for="nascimento">Data de
+                                    Nascimento</label>
+                                <span>00/00/0000</span>
+                            </div>
+                            <div class="form-group-bi">
+                                <label for="nomePai">Nome do Pai</label>
+                                <span>Pai exemplo da silva</span>
+                            </div>
+                            <div class="form-group-bi">
+                                <label for="nomeMae">Nome da Mãe</label>
+                                <span>Mãe exemplo da silva</span>
+                            </div>
+                            <div class="form-group-bi">
+                                <label for="numBi">Número do BI</label>
+                                <span>00000000LA0000</span>
+                            </div>
+                            <div class="form-group-bi">
+                                <label for="bairro">Residência</label>
+                                <span>Luanda, Simeone - 598</span>
+                            </div>
+                        </article>
+
+                        <article id="validade">
+                            <div class="form-group-bi">
+                                <label for="validade">Validade do
+                                    documento</label>
+                                <span>00/00/0000</span>
+                            </div>
+
+                            <p id="impossivel">
+                                Não é possível marcar a renovação para este
+                                documento.
+                            </p>
+
+                        </article>
+
+                        <form action="#" method="post" id="proposta" onsubmit="return respostaMarcacao(event)">
+                            <div class="form_group-proposta">
+
+                                <div>
+                                    <label for="data">Data</label>
+                                    <span>quinta-feira, 11-Agosto-2025</span>
+                                </div>
+                                <div>
+                                    <label for="dataAlternativa">Data
+                                        Alternativa</label>
+                                    <span>Sábado, 13-Agosto-2025</span>
+                                </div>
+                                <div>
+                                    <label for="local">Local</label>
+                                    <span>quinta-feira, 11-Agosto-2025</span>
+                                </div>
+                            </div>
+
+                            <button type="button"
+                                id="confirmarMarcacao">Confirmar
+                                Marcação</button>
+                            <button type="button"
+                                id="cancelarMarcacao">Cancelar</button>
+                        </form>
+
+                        <a href="../index.html" id="voltar">
+                            Voltar
+                        </a>
+                    </div>
+                </section>
+
+                <form action="#" method="POST" id="cancelarForm"
+                    class="cancelar form" onsubmit="return cancelar(event)"
+                    autocomplete="off">
                     <div class="verification-icon-box">
                         <i class="fas fa-search"></i>
                     </div>
                     <h2>Cancelar Marcação</h2>
                     <p class="cancelar-desc">
-                        Insira o número de refecência do seu comprovativo para cancelar.
+                        Insira o número de refecência do seu comprovativo para
+                        cancelar.
                     </p>
                     <div class="form-group">
                         <label for="numeroRef">Numero de Referencia</label>
-                        <input type="number" name="numeroRef" id="numeroRef" placeholder="ex.: 1234" maxlength="4" minlength="4">
-                        <p class="infor_ref" id="infor_ref">O numero deve conter 4 caracteres numéricos!</p>
+                        <input type="number" name="numeroRef" id="numeroRef"
+                            placeholder="ex.: 1234" maxlength="4" minlength="4">
+                        <p class="infor_ref" id="infor_ref">O numero deve conter
+                            4 caracteres numéricos!</p>
                     </div>
                     <button type="submit" class="cancelar-btn">
                         Pesquisar e Cancelar
