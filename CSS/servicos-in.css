@@ -38,6 +38,10 @@
     --radius: 10px;
 }
 
+* {
+    text-decoration: none;
+}
+
 /* ------ MARCAÇÃO ------- */
 
 .marcacao {
@@ -229,7 +233,9 @@ input[type="number"] {
 }
 
 .verify-button:active,
-.cancelar-btn:active, #confirmarMarcacao:active, #cancelarMarcacao:active {
+.cancelar-btn:active,
+#confirmarMarcacao:active,
+#cancelarMarcacao:active {
     scale: .9;
 }
 
@@ -309,7 +315,7 @@ input[type="number"] {
     display: none;
 }
 
-#dados-cidadao.verDados{
+#dados-cidadao.verDados {
     display: block;
 }
 
@@ -335,28 +341,28 @@ input[type="number"] {
     border-radius: 8px;
 }
 
-.resultadoBi_titulo{
+.resultadoBi_titulo {
     font-weight: 600;
     color: #16A34A;
 }
 
-.content_res{
+.content_res {
     color: #16A34A;
     font-size: small;
 }
 
 /* ------- RESULTADO DE BI CADUCADO ------- */
 
-#resutadoBi_id.caducado{
+#resutadoBi_id.caducado {
     background-color: rgba(255, 9, 5, 0.123);
 }
 
-.resultadoBi_titulo.caducado-t{
+.resultadoBi_titulo.caducado-t {
     font-weight: 600;
     color: red;
 }
 
-.content_res.caducado-c{
+.content_res.caducado-c {
     color: rgba(255, 9, 5, 0.774);
 }
 
@@ -368,29 +374,29 @@ input[type="number"] {
     gap: 12px;
 }
 
-.form-group-bi{
+.form-group-bi {
     display: flex;
     flex-direction: column;
 }
 
-.form-group-bi label{
+.form-group-bi label {
     color: var(--muted);
     font-size: small;
 }
 
-.form-group-bi span{
+.form-group-bi span {
     font-size: small;
     letter-spacing: 1px;
     color: var(--text);
     font-weight: 500;
 }
 
-article#validade{
+article#validade {
     border-top: 1px solid var(--muted);
     padding: 8px 0;
 }
 
-#impossivel{
+#impossivel {
     color: var(--accent);
     text-align: center;
     margin-top: 8px;
@@ -400,11 +406,11 @@ article#validade{
     display: none;
 }
 
-#impossivel.activo{
+#impossivel.activo {
     display: block;
 }
 
-#voltar{
+#voltar {
     width: fit-content;
     margin: 0 auto;
     text-align: center;
@@ -417,7 +423,7 @@ article#validade{
     display: none;
 }
 
-#voltar.activo{
+#voltar.activo {
     display: block;
 }
 
@@ -425,29 +431,29 @@ article#validade{
 /* -------- PROPOSTA DE MARCAÇAO -------- */
 
 
-#proposta{
+#proposta {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    
+
     display: none;
 }
 
-#proposta.activo{
+#proposta.activo {
     display: block;
 }
 
-#proposta h4{
+#proposta h4 {
     color: var(--text);
 }
 
 
-#proposta .form_group-proposta{
+#proposta .form_group-proposta {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
 
-    div{
+    div {
         display: flex;
         flex-direction: column;
         gap: 4px;
@@ -456,18 +462,18 @@ article#validade{
     }
 }
 
-#proposta .form_group-proposta div > span{
+#proposta .form_group-proposta div>span {
     font-size: 14px;
 }
 
-#proposta label{
+#proposta label {
     color: var(--blue);
     font-size: small;
     font-weight: 500;
 
 }
 
-#proposta button{
+#proposta button {
     padding: 8px;
     border: none;
     outline: none;
@@ -480,11 +486,12 @@ article#validade{
     transition: scale .3s ease-in-out;
 }
 
-#confirmarMarcacao{
+#confirmarMarcacao {
     background-color: #16A34A;
     color: var(--back-0);
 }
-#cancelarMarcacao{
+
+#cancelarMarcacao {
     color: var(--muted);
 }
 
@@ -516,13 +523,13 @@ article#validade{
     color: var(--muted);
 }
 
-#cards-infor{
+#cards-infor {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
 
-.card-infor{
+.card-infor {
     background-color: var(--back-0);
 
     border-radius: 12px;
@@ -535,17 +542,114 @@ article#validade{
     padding: 12px;
 }
 
-.card-infor h4{
+.card-infor h4 {
     color: var(--text);
 }
 
-.card-infor div{
+.card-infor div {
     display: flex;
     flex-direction: column;
     color: var(--muted);
     font-size: 14px;
     letter-spacing: 1px;
 }
+
+/* --------- PRIMEIRA VIA ------- */
+
+#primeiraVia,
+#renovacao,
+#segundaViaDuplicado {
+    background-color: var(--back-0);
+    padding: 0;
+    margin-bottom: var(--gap-16);
+    border-radius: var(--gap-8);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(10, 10, 10, 0.04);
+}
+
+#primeiraVia h2 {
+    font-size: var(--text-24);
+    color: var(--text);
+    z-index: 99;
+    padding: 6px;
+    background-color: rgba(243, 5, 1, .200);
+}
+
+#primeiraVia div,
+#renovacao div,
+#segundaViaDuplicado div {
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-12);
+    padding: var(--gap-16);
+}
+
+/* #primeiraVia #documentos{
+
+} */
+
+#primeiraVia #nota {
+    font-size: var(--text-14);
+    padding: 6px;
+    color: rgb(107, 91, 3);
+    background-color: rgba(255, 217, 0, 0.200);
+
+    a {
+        color: rgb(107, 91, 3);
+    }
+}
+
+#primeiraVia #documentos h3,
+#renovacao h3,
+#segundaViaDuplicado h3 {
+    font-size: var(--text-18);
+    color: var(--text);
+    font-weight: 500;
+}
+
+#primeiraVia #documentos ul li,
+#renovacao ul li,
+#segundaViaDuplicado ul li {
+    font-size: var(--text-14);
+    list-style-position: inside;
+}
+
+#renovacao h2 {
+    font-size: var(--text-24);
+    color: var(--text);
+    z-index: 99;
+    padding: 6px;
+    background-color: rgba(0, 119, 255, 0.200);
+}
+
+#segundaViaDuplicado h2 {
+    font-size: var(--text-24);
+    color: var(--text);
+    z-index: 99;
+    padding: 6px;
+    background-color: rgba(121, 127, 140, 0.200);
+}
+
+#convite {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--gap-12);
+
+    a {
+        color: var(--back-0);
+        background-color: red;
+        padding: 6px;
+        border-radius: var(--gap-8);
+    }
+}
+
+#convite h2 {
+    font-size: var(--text-24);
+    text-align: center;
+}
+
 
 
 
@@ -555,16 +659,166 @@ article#validade{
 /* -------------------------------------- */
 /* -------------------------------------- */
 
-#menores{
+#menores {
     background-color: var(--purple);
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-#menores p{
+.BiMenores{
+    padding: 24px 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--gap-24);
+}
+
+#menores p {
     color: whitesmoke;
-   
+
     letter-spacing: 1px;
     max-width: 768px;
+}
+
+#introducao {
+    padding: 32px 0;
+    color: var(--muted);
+}
+
+#docObrigatorio,
+#casosEspecias {
+    background-color: var(--back-0);
+    padding: 0;
+    margin-bottom: var(--gap-16);
+    border-radius: var(--gap-8);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(10, 10, 10, 0.04);
+}
+
+#docObrigatorio h2,
+#casosEspecias h2 {
+    background-color: rgba(147, 51, 234, .200);
+    font-size: var(--text-24);
+    color: var(--text);
+    z-index: 99;
+    padding: 6px;
+
+}
+
+#docObrigatorio i{
+    color: var(--purple);
+}
+
+#casosEspecias h2 i{
+    color: rgb(177, 151, 4);
+}
+
+#casosEspecias h2 {
+    background-color: rgba(255, 217, 0, 0.200);
+    font-size: var(--text-24);
+    color: var(--text);
+    z-index: 99;
+    padding: 6px;
+}
+
+#docObrigatorio article,
+#casosEspecias article {
+    padding: var(--gap-16);
+}
+
+#docObrigatorio article ul,
+#casosEspecias article {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-12);
+}
+
+#docObrigatorio article ul li p,
+#casosEspecias article div p {
+    font-size: var(--text-14);
+    color: var(--muted);
+}
+
+#docObrigatorio article ul li h3,
+#casosEspecias article div h3 {
+    font-size: var(--text-20);
+    color: var(--text);
+    font-weight: 500;
+}
+
+.atendimento{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-12);
+}
+
+#atendPrioritario {
+    border-radius: var(--gap-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-8);
+    padding: var(--gap-8);
+    background-color: var(--back-0);
+    box-shadow: 0 8px 20px rgba(10, 10, 10, 0.04);
+    color: var(--purple);
+}
+
+#atendPrioritario p{
+    font-size: var(--text-14);
+}
+
+#ValidadeMenores {
+    border-radius: var(--gap-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-8);
+    padding: var(--gap-8);
+    background-color: var(--back-0);
+    box-shadow: 0 8px 20px rgba(10, 10, 10, 0.04);
+}
+
+#ValidadeMenores div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#ValidadeMenores div span,
+#ValidadeMenores div p {
+    color: var(--muted);
+    font-size: var(--gap-14);
+}
+
+#conviteMenores {
+    border-radius: var(--gap-12);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--gap-8);
+    padding: var(--gap-8);
+    box-shadow: 0 8px 20px rgba(10, 10, 10, 0.04);
+    background-color: var(--dark);
+}
+
+#conviteMenores h2 {
+    color: var(--back-0);
+    font-weight: 400;
+    font-size: var(--text-20);
+}
+
+#conviteMenores div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--gap-8);
+    color: var(--muted);
+}
+
+#conviteMenores div a {
+    color: var(--back-0);
+    background-color: red;
+    padding: 6px;
+    border-radius: var(--gap-8);
+    width: 100%;
+    text-align: center;
 }

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-AO">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área Administrativa - Registo Civil</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
- <style>
+    <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -166,6 +165,133 @@
             </div>
         </main>
     </div>
-    
+
+    <script>
+        // Verificar Autenticação
+        if (localStorage.getItem('adminLoggedIn') !== 'true') {
+            window.location.href = '/admin-login.html';
+        }
+
+        // Logout
+        function logout() {
+            localStorage.removeItem('adminLoggedIn');
+            localStorage.removeItem('adminUser');
+            window.location.href = '/admin-login.html';
+        }
+
+        lucide.createIcons();
+
+        // Carregar info do admin
+        const adminUser = JSON.parse(localStorage.getItem('adminUser') || '{"name": "Administrador", "email": "admin@registocivil.ao"}');
+        document.getElementById('admin-name-display').textContent = adminUser.name;
+        document.getElementById('admin-email-display').textContent = adminUser.email;
+
+        // Elementos
+        const tableBody = document.getElementById('appointments-table');
+        const totalCountEl = document.getElementById('total-count');
+        const todayCountEl = document.getElementById('today-count');
+        const searchInput = document.getElementById('search-input');
+        const dateFilter = document.getElementById('date-filter');
+        const emptyState = document.getElementById('empty-state');
+
+        // Carregar dados
+        let appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+
+        // Função para renderizar tabela
+        function renderTable(data) {
+            tableBody.innerHTML = '';
+            
+            if (data.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            
+            emptyState.classList.add('hidden');
+
+            data.forEach(app => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-gray-50 transition-colors';
+                row.innerHTML = `
+                    <td class="px-6 py-4 font-mono font-medium text-gray-900">${app.reference}</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-xs font-bold text-gray-600">
+                                ${app.name.charAt(0)}
+                            </div>
+                            ${app.name}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">${app.date}</td>
+                    <td class="px-6 py-4">${app.time}</td>
+                    <td class="px-6 py-4 text-gray-500">${app.location}</td>
+                    <td class="px-6 py-4">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            Confirmado
+                        </span>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Função para atualizar estatísticas
+        function updateStats() {
+            totalCountEl.textContent = appointments.length;
+            // Simulação simples de "hoje" (apenas conta total para demo)
+            todayCountEl.textContent = Math.floor(appointments.length * 0.2); 
+        }
+
+        // Filtros
+        function filterData() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filterDate = dateFilter.value; // YYYY-MM-DD
+
+            const filtered = appointments.filter(app => {
+                const matchesSearch = app.name.toLowerCase().includes(searchTerm) || 
+                                      app.reference.toLowerCase().includes(searchTerm);
+                
+                // Nota: A data no objeto está formatada (ex: "Segunda-feira, 20..."). 
+                // Para um filtro real de data, precisaríamos de guardar a data em formato ISO.
+                // Aqui faremos uma verificação simples de string se houver filtro.
+                let matchesDate = true;
+                if (filterDate) {
+                    // Converter input date para formato legível ou verificar se a string contém partes
+                    // Simplificação para demo: verificar se a string de data contém o dia/mês
+                    // Idealmente: guardar timestamp no objeto appointment
+                    matchesDate = true; // Ignorar filtro de data complexo nesta demo HTML simples
+                }
+
+                return matchesSearch && matchesDate;
+            });
+
+            renderTable(filtered);
+        }
+
+        // Event Listeners
+        searchInput.addEventListener('input', filterData);
+        dateFilter.addEventListener('change', filterData);
+
+        // Gerar dados Mock (para teste)
+        window.generateMockData = function() {
+            const mockData = [
+                { reference: "REF-1023", name: "João Manuel", date: "Segunda-feira, 25 de Novembro de 2025", time: "09:00", location: "Loja do Kilamba" },
+                { reference: "REF-4592", name: "Maria António", date: "Terça-feira, 26 de Novembro de 2025", time: "14:30", location: "Loja do Kilamba" },
+                { reference: "REF-8821", name: "Pedro Costa", date: "Quarta-feira, 27 de Novembro de 2025", time: "10:00", location: "Loja do Kilamba" },
+            ];
+            
+            const current = JSON.parse(localStorage.getItem('appointments') || '[]');
+            const newApps = [...current, ...mockData];
+            localStorage.setItem('appointments', JSON.stringify(newApps));
+            appointments = newApps;
+            renderTable(appointments);
+            updateStats();
+            alert("Dados de teste gerados!");
+        };
+
+        // Inicialização
+        renderTable(appointments);
+        updateStats();
+
+    </script>
 </body>
 </html>
