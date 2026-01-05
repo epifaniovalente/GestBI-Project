@@ -641,7 +641,7 @@ article#validade {
 /* -------------------------------------- */
 
 #menores {
-    background-color: var(--accent);
+    background-color: var(--dark);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -685,7 +685,7 @@ article#validade {
 }
 
 #docObrigatorio i{
-    color: var(--purple);
+    color: var(--accent);
 }
 
 #casosEspecias h2 i{
