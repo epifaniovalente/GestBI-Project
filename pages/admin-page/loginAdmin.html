@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Administrador</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/midia.css">
+
+    </head>
+    <body>
+
+        <main class="container">
+
+            <section class="form-box">
+
+                <div class="form-header">
+                    <p>Registo Civil</p>
+                    <h1>Acesso Administrativo</h1>
+                </div>
+
+                <form action="#" method="post" class="form-login"
+                    id="loginAdmin" onsubmit="return validarLogin(event)">
+                    <p id="avisoLogin"></p>
+
+                    <div class="form-group" id="teste">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email"
+                            placeholder="admin@exemplo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Palavra-passe</label>
+                        <input type="password" name="password" id="password"
+                            placeholder="********">
+                    </div>
+
+                    <button type="submit">Entrar</button>
+
+                    <p>
+                        Ñ tem conta? <a href="#">Criar Conta</a>
+                    </p>
+                </form>
+            </section>
+
+        </main>
+
+        <script>
+            const loginAdmin = document.getElementById('loginAdmin');
+            const avisoLogin = document.getElementById('avisoLogin');
+
+            function validarLogin(event) {
+                event.preventDefault();
+                const email = document.getElementById('email').value;
+                const senha = document.getElementById('password').value;
+
+                if (senha.length < 14 || email.length < 12) {
+                    avisoLogin.textContent = "Acesso Negado! Verifique seus dados.";
+                }else{
+                    avisoLogin.textContent = "";
+                }
+                
+            }
+        </script>
+    </body>
+</html>

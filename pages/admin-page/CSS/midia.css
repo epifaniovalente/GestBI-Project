@@ -1,0 +1,114 @@
+:root {
+    --white: #ffffff;
+    --fundo: #f3f4f6;
+    --sidebar: #101828;
+    --logo: #e7000b;
+    --logoDark: #491821;
+    --red: #DC2626;
+    --green: #16A34A;
+    --blue: #2563AB;
+    --purple: #9333EA;
+
+
+    --gap-0: 0px;
+    --gap-8: 8px;
+    --gap-12: 12px;
+    --gap-16: 16px;
+    --gap-24: 24px;
+    --gap-32: 32px;
+
+    --text-12: 12px;
+    --text-14: 14px;
+    --text-16: 16px;
+    --text-18: 18px;
+    --text-20: 20px;
+    --text-24: 24px;
+    --text-32: 32px;
+    --text-44: 44px;
+    --text-60: 60px;
+    --muted: #6b7280;
+
+}
+
+@media screen and (max-width:1280px){
+    #mainContent{
+        margin-left: 256px;
+    }
+}
+
+@media screen and (max-width:860px) {
+    aside {
+        width: 0;
+    }
+
+    #sair{
+        display: none;
+    }
+
+    /* mobile toggle */
+    .menu-toggle {
+        display: block;
+    }
+
+    #mainContent{
+        margin-left: 0;
+    }
+
+    #cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #filtros form{
+        flex-direction: column;
+    }
+
+    .group-filtros{
+        width: 100%;
+    }
+
+    .conteudoHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .conteudoHeader div h1 {
+        font-size: var(--text-24);
+    }
+
+    .conteudoHeader button {
+        align-self: self-end;
+        margin-top: 1rem;
+    }
+
+}
+
+@media only screen and (max-width: 767px){
+
+    .form-header {
+        padding: var(--gap-16);
+    }
+    .form-header h1{
+        font-size: var(--text-24);
+    }
+    .form-login {
+        width: 100%;
+        padding: var(--gap-16) var(--gap-8);
+    }
+}
+
+@media screen and (max-width:576px) {
+    #cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .group-filtros{
+        flex-direction: column;
+    }
+
+    #filtros form input{
+        width: 100%;
+    }
+
+    #filtros form button{
+        width: 100%;
+    }
+}

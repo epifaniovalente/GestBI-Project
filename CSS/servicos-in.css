@@ -164,7 +164,7 @@
     animation: surgir .3s ease;
 }
 
-.form.activo {
+.form.activo, .comprovativo {
     display: block;
 }
 
@@ -182,10 +182,6 @@ input[type="number"] {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-.form input.numeroBi.aviso {
-    border: 1px dashed var(--accent);
 }
 
 .form input {
@@ -530,20 +526,20 @@ article#validade {
 }
 
 .card-infor {
-    background-color: var(--back-0);
-
+    background-color: var(--dark);
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(10, 10, 10, 0.04);
-    /* transition: transform .25s ease, box-shadow .25s ease; */
+    box-shadow: 0 8px 20px rgba(10, 10, 10, 0.01);
 
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 12px;
+
+    animation: surgir .5s ease-in;
 }
 
 .card-infor h4 {
-    color: var(--text);
+    color: var(--back-0);
 }
 
 .card-infor div {
@@ -557,22 +553,13 @@ article#validade {
 /* --------- PRIMEIRA VIA ------- */
 
 #primeiraVia,
-#renovacao,
 #segundaViaDuplicado {
     background-color: var(--back-0);
-    padding: 0;
-    margin-bottom: var(--gap-16);
-    border-radius: var(--gap-8);
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(10, 10, 10, 0.04);
 }
 
 #primeiraVia h2 {
     font-size: var(--text-24);
     color: var(--text);
-    z-index: 99;
-    padding: 6px;
-    background-color: rgba(243, 5, 1, .200);
 }
 
 #primeiraVia div,
@@ -583,21 +570,25 @@ article#validade {
     flex-direction: column;
     gap: var(--gap-12);
     padding: var(--gap-16);
+    p{
+        color: var(--text);
+    }
 }
-
-/* #primeiraVia #documentos{
-
-} */
 
 #primeiraVia #nota {
     font-size: var(--text-14);
     padding: 6px;
     color: rgb(107, 91, 3);
-    background-color: rgba(255, 217, 0, 0.200);
+    background: linear-gradient(90deg, rgba(255, 217, 0, 0.200), rgba(255, 217, 0, 0.11));
 
     a {
+        text-decoration: underline;
         color: rgb(107, 91, 3);
     }
+}
+
+#renovacao{
+    background: transparent;
 }
 
 #primeiraVia #documentos h3,
@@ -615,20 +606,10 @@ article#validade {
     list-style-position: inside;
 }
 
-#renovacao h2 {
+#renovacao h2, #segundaViaDuplicado h2 {
     font-size: var(--text-24);
     color: var(--text);
-    z-index: 99;
     padding: 6px;
-    background-color: rgba(0, 119, 255, 0.200);
-}
-
-#segundaViaDuplicado h2 {
-    font-size: var(--text-24);
-    color: var(--text);
-    z-index: 99;
-    padding: 6px;
-    background-color: rgba(121, 127, 140, 0.200);
 }
 
 #convite {
@@ -660,7 +641,7 @@ article#validade {
 /* -------------------------------------- */
 
 #menores {
-    background-color: var(--purple);
+    background-color: var(--accent);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -687,20 +668,18 @@ article#validade {
 
 #docObrigatorio,
 #casosEspecias {
-    background-color: var(--back-0);
+    /* background-color: var(--back-0); */
     padding: 0;
     margin-bottom: var(--gap-16);
     border-radius: var(--gap-8);
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(10, 10, 10, 0.04);
+    box-shadow: 0 8px 20px rgba(10, 10, 10, 0.01);
 }
 
 #docObrigatorio h2,
 #casosEspecias h2 {
-    background-color: rgba(147, 51, 234, .200);
-    font-size: var(--text-24);
     color: var(--text);
-    z-index: 99;
+    font-size: var(--text-24);
     padding: 6px;
 
 }
@@ -714,10 +693,8 @@ article#validade {
 }
 
 #casosEspecias h2 {
-    background-color: rgba(255, 217, 0, 0.200);
     font-size: var(--text-24);
     color: var(--text);
-    z-index: 99;
     padding: 6px;
 }
 
@@ -741,7 +718,7 @@ article#validade {
 
 #docObrigatorio article ul li h3,
 #casosEspecias article div h3 {
-    font-size: var(--text-20);
+    font-size: var(--text-18);
     color: var(--text);
     font-weight: 500;
 }
@@ -760,7 +737,7 @@ article#validade {
     padding: var(--gap-8);
     background-color: var(--back-0);
     box-shadow: 0 8px 20px rgba(10, 10, 10, 0.04);
-    color: var(--purple);
+    color: var(--accent);
 }
 
 #atendPrioritario p{
@@ -821,4 +798,77 @@ article#validade {
     border-radius: var(--gap-8);
     width: 100%;
     text-align: center;
+}
+
+
+
+
+/* -------------------------------------- */
+/* --------- COMPROVATIVO --------- */
+/* -------------------------------------- */
+
+.form-group-dados{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-12);
+    margin: auto;
+    max-width: 350px;
+    border: 1px solid var(--muted);
+    padding: var(--gap-12);
+    border-radius: var(--gap-12);
+
+    p{
+        color: var(--muted);
+    }
+     
+    label{
+        color: var(--text);
+    }
+}
+
+.form-group-dados article:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #afafaf;
+}
+
+.form-group-dados article:last-child{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-8);
+}
+
+.form-group-dados article:last-child > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-group-btn{
+    margin-top: var(--gap-16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-12);
+}
+
+.form-group-btn a{
+    font-weight: 500;
+    color: var(--back-0);
+    padding: var(--gap-8);
+    border-radius: 8px;
+    font-size: medium;
+    font-weight: 500;
+    width: 50%;
+    text-align: center;
+}
+
+.form-group-btn a{
+    background-color: #afb1b6;
+}
+
+.form-group-btn a:last-child{
+    background-color: #d40d0d;
+    text-decoration: underline;
 }

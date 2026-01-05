@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comprovativo - GestBI</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- ------- CSS ------- -->
+        <link rel="stylesheet" href="../CSS/general-styles.css">
+        <link rel="stylesheet" href="../CSS/servicos-in.css">
+        <link rel="stylesheet" href="../CSS/midias.css">
+        <!-- ------- JAVA SCRIPT ------- -->
+         <script src="../JS/script.js" defer></script>
+         <script src="../JS/scriptDados.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="nav container">
+                <div class="nav-left">
+                    <a class="logo" href="../index.html">
+                        <span class="logotipo">BI</span>
+                        <span class="logo-text">Registo Civil</span>
+                    </a>
+                </div>
+
+                <button id="menu-toggle" class="menu-toggle"
+                    aria-label="Abrir menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../index.html" target="_self">Home</a></li>
+
+                    <li class="nav-item details-wrapper" id="services-wrapper">
+
+                        <details id="services-details" class="services-details">
+                            <summary class="services-summary">
+                                Serviços
+                                <span class="seta">▾</span>
+                            </summary>
+
+                            <div class="dropdown">
+                                <a href="marcacao.html" class="service-link">
+                                    Marcação
+                                </a>
+                                <a href="informacao.html" class="service-link">
+                                    Informações Gerais
+                                </a>
+                                <a href="bimenores.html" class="service-link">
+                                    BI para Menores
+                                </a>
+                            </div>
+                        </details>
+                    </li>
+
+                    <li><a href="about.html" target="_self">Sobre</a></li>
+                    <li><a href="contacto.html" target="_self">Contacto</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <a href="marcacao.html" class="btn btn-marcacao"
+                        id="cta-top">
+                        Marcação
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+
+        <main class="verification-container">
+            <section class="marcacao container">
+                <h1 class="hero-titulo">Marcação Automática</h1>
+                <p class>
+                    O nosso sistema de validação vai verificar o estado do seu BI
+                    se há disponibilidade e atribui a melhor data para si.
+                </p>
+            </section>
+
+            <section class="verificacao-card ">
+                <!-- <div class="btns-trocar-form">
+                    <button id="verificarBtn" class="activo verificar" disabled>
+                        Nova Marcação</button>
+                    <button id="cancelarBtn" class="cancelar" disabled>
+                        Cancelar Marcação
+                    </button>
+                </div> -->
+
+                <form action="#" method="POST" class="form comprovativo">
+                    <div class="verification-icon-box">
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                    <h2>Marcação Confirmada</h2>
+
+                    <p class="verificacao-desc">
+                        O seu atendimento foi agendado com sucesso. Por favor compareça 15 minutos antes.
+                    </p>
+                    <div class="form-group-dados">
+                        <article>
+                            <label for="referencia">Referência Nº</label>
+                            <p id="referencia">0000</p>
+                        </article>
+                        <article>
+                            <div>
+                                <label for="data">Data</label>
+                                <p class="dataReal">Lorem, ipsum dolor.</p>
+                            </div>
+                            <div>
+                                <label for="data">Data Alternativa</label>
+                                <p class="dataAlt">Lorem, ipsum dolor.</p>
+                            </div>
+                            <div>
+                                <label for="data">Local</label>
+                                <p class="local">Lorem, ipsum dolor.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="form-group-btn">
+                        <a href="marcacao.html" target="_self" id="voltarComprovativo">Voltar.</a>
+                        <a href="#" target="_self" download="#">Baixar Comprovativo</a>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <section class="container-footer footer-grid">
+                <div>
+                    <h4>Registo Civil</h4>
+                    <p>Sistema de gestão de marcação para renovação de Bilhete
+                        de Identidade em Luanda.</p>
+                </div>
+
+                <div class="footer_card">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Agendar</a></li>
+                        <li><a href="#">Informações</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer_card">
+                    <h4>Contacto</h4>
+                    <address>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Rua do Mufulama, Luanda, Angola<br>
+                        <a
+                            href="mailto:gestbiregistocivil@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                            gestbiregistocivil@gmail.com
+                        </a>
+                        <a href="tel:+244 923000000">
+                            <i class="fa-solid fa-phone"></i>
+                            +244 950 000 000
+                        </a>
+                    </address>
+                    <div class="social-midia">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </section>
+
+            <div class="footer-bottom">
+                © 2025 Registo Civil Angola. Todos os direitos reservados.
+            </div>
+        </footer>
+    </body>
+</html>

@@ -85,7 +85,6 @@ function validarBI(numeroBi) {
 function verficar(event) {
     event.preventDefault();
     const numeroBi = document.getElementById("numeroBi").value;
-    const numBi = document.querySelector(".numeroBi")
     const detalhe = document.getElementById("detalhe");
 
     const dados_cidadao = document.getElementById("dados-cidadao");
@@ -102,10 +101,8 @@ function verficar(event) {
 
     if (validarBI(numeroBi)) {
         detalhe.classList.remove("aviso")
-        numBi.classList.remove("aviso")
     } else {
         detalhe.classList.add("aviso")
-        numBi.classList.add("aviso")
     }
 
 
@@ -139,7 +136,7 @@ function verficar(event) {
         content_res.classList.add("caducado-c")
         proposta.classList.add("activo")
         impossivel.classList.remove("activo")
-        voltar.classList.add("activo")
+        voltar.classList.remove("activo")
 
         resultadoBi_titulo.textContent = "Em via de renovação"
         content_res.textContent = "O seu bilhete de identidade já encontra-se caducado. Pode proceder a marcação."
@@ -239,3 +236,17 @@ cancelarBtn.addEventListener("click", () => {
     resultado.classList.remove("NaoCancelado")
     resultado.classList.remove("cancelado")
 })
+
+/* ------------ BOTAO CONFIRMAR ------------ */
+
+const confirmarMarcacao = document.getElementById("confirmarMarcacao");
+confirmarMarcacao.onclick = () => {
+    window.location.href = 'comprovativo.html';
+}
+
+/* ------------ BOTAO VOLATR_COMPROVATIVO ------------ */
+
+const voltarComprovativo = document.getElementById("voltarComprovativo");
+voltarComprovativo.onclick = () => {
+    window.location.href = 'marcacao.html'
+}

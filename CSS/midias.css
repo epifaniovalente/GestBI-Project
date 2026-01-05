@@ -2,9 +2,6 @@
 
 /* ---------- TELAS LARGAS ---------- */
 @media screen and (max-width:992px) {
-    #cards-infor{
-        grid-template-columns: repeat(2, 1fr);
-    }
     .sobre-cards {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -99,7 +96,11 @@
     }
 
     .sobre-cards {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .equipa-grid{
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .contacto-area {
@@ -121,6 +122,10 @@
     .BiMenores{
         grid-template-columns: repeat(1, 1fr);
     }
+
+    /* .footer-grid {
+        grid-template-columns: repeat(2, 1fr)
+    } */
 }
 
 /* ---------- MEDIUM SCREENS ---------- */
@@ -133,6 +138,18 @@
 
     #cards-infor{
         grid-template-columns: repeat(2, 1fr);
+    }
+
+     .sobre-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .equipa-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(1, 1fr)
     }
 }
 
