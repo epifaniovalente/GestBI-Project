@@ -30,6 +30,19 @@
 
 }
 
+
+@media print {
+/* O QUE NECESSARIAMENTE SERA IMPRENSSO */
+    .group-filtros.print {
+        display: none;
+    }
+
+    /* Esconde menus ao imprimir */
+    .tabela-relatorio {
+        border: 1px solid #000;
+    }
+}
+
 @media screen and (max-width:1280px){
     #mainContent{
         margin-left: 256px;

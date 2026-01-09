@@ -392,6 +392,7 @@ article#validade {
     padding: 8px 0;
 }
 
+/* --------- */
 #impossivel {
     color: var(--accent);
     text-align: center;
@@ -422,7 +423,7 @@ article#validade {
 #voltar.activo {
     display: block;
 }
-
+ /* --------- */
 
 /* -------- PROPOSTA DE MARCAÇAO -------- */
 

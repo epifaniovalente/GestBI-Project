@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa - Registo Civil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ------- CSS ------- -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/midia.css">
+    <script src="JS/scriptCode.js" defer></script>
+</head>
+
+<body>
+
+    <div id="fundo">
+        <!-- ---------- SIDEBAR ---------- -->
+        <aside id="menuAside">
+            <!-- ---------- CABECALHO ---------- -->
+            <div class="cabecalho">
+                <div class>BI</div>
+                <span id="logoregistro">Registo Civil</span>
+            </div>
+            <!-- ---------- ----- ---------- -->
+
+            <nav class>
+                <a href="dashboard.html" class>
+                    <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+                    Dashboard
+                </a>
+                <a href="relatorio.html" class>
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                    Relatório
+                </a>
+            </nav>
+
+            <!-- ---------- RODAPE ---------- -->
+            <div id="rodape">
+                <div class="rodape-p">
+                    <div class="icone">
+                        <i data-lucide="user" class="w-4 h-4"></i>
+                    </div>
+                    <div class="infoAdmin">
+                        <p id="admin-name" class>Administrador</p>
+                        <p id="admin-email" class>admin@registocivil.ao</p>
+                    </div>
+                </div>
+                <button onclick="logout()" id="terminarSessao">
+                    <i data-lucide="log-out" class="w-3 h-3"></i>
+                    Terminar Sessão
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main id="mainContent">
+            <!-- Mobile Header -->
+            <header class>
+                <span class>Admin Painel</span>
+                <button onclick="logout()" id="sair">Sair</button>
+
+                <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </header>
+
+            <div id="conteudo">
+                <div class="conteudoHeader">
+                    <div>
+                        <h1 class>Relatório</h1>
+                        <p class>Estatisticas das marcações do BI.</p>
+                    </div>
+                    <button onclick="actualizarData()" id="actualizar">
+                        Actualizar Dados
+                    </button>
+                    <button onclick="window.print()" class="btn-primario">Imprimir PDF</button>
+                </div>
+
+                <!-- Filtros & Pesquisa -->
+                <div id="filtros">
+                    <form action method="post">
+                        <h2>Lista de Relatório</h2>
+
+                        <div class="group-filtros print">
+                            <select name="periodo" id="periodo">
+                                <option value="" disabled selected>Selecione perido</option>
+                                <option value="semana">Últimos 7 dias</option>
+                                <option value="trimestre">Último trimestre</option>
+                                <option value="mes">Este Mês</option>
+                            </select>
+
+                            <button type="button">Aplicar</button>
+                        </div>
+
+                    </form>
+
+                    <!-- Table -->
+                    <div id="tabela">
+                        <table class"tabela-relatorio">
+                            <thead>
+                                <tr class>
+                                    <th>Data da Marcação</th>
+                                    <th>Referência</th>
+                                    <th>Cidadão (NIF)</th>
+                                    <th>Nome Completo</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointments-table" class>
+                                <tr>
+                                    <td>2026-01-09</td>
+                                    <td><strong>REF-2026-001</strong></td>
+                                    <td>123456789LA001</td>
+                                    <td>Fulano de TAL</td>
+                                    <td> <span class="status-tag tag-cancelado">Cancelado</span> </td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-09</td>
+                                    <td><strong>REF-2026-001</strong></td>
+                                    <td>123456789LA001</td>
+                                    <td>Fulano de TAL</td>
+                                    <td> <span class="status-tag tag-concluido">Concluido</span> </td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-09</td>
+                                    <td><strong>REF-2026-001</strong></td>
+                                    <td>123456789LA001</td>
+                                    <td>Fulano de TAL</td>
+                                    <td> <span class="status-tag tag-pendente">pendente</span> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- -------- CASO ESTEJA VAZIO -------- -->
+                    <div id="caso-vazio" class="activo">
+                        <div class>
+                            <i data-lucide="inbox" class="w-8 h-8 text-gray-400"></i>
+                        </div>
+                        <h3 class>Nenhum agendamento encontrado para este período</h3>
+                        <p class>Tente actualizar os dados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL EDITAR -->
+            <div id="modalEditar" class="modal">
+
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h2>Editar Registro</h2>
+                        <button class="btn-fechar" onclick="fecharModal()">✕</button>
+                    </header>
+
+                    <form action method="post" id="formEditar">
+
+                        <div class="campo">
+                            <label for="nome">Nº Referência</label>
+                            <input type="text" id="nome" placeholder="Nome completo">
+                            <small class="erro" id="erroNome"></small>
+                        </div>
+
+                        <div class="campo">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="email@exemplo.com">
+                            <small class="erro" id="erroEmail"></small>
+                        </div>
+
+                        <div class="campo">
+                            <label for="status">Estado</label>
+                            <select id="status">
+                                <option value>Selecione</option>
+                                <option value="Ativo">Realizado</option>
+                                <option value="Inativo">Cancelado</option>
+                            </select>
+                            <small class="erro" id="erroStatus"></small>
+                        </div>
+
+                        <footer class="modal-footer">
+                            <button type="button" class="btn-secundario" onclick="fecharModal()">Cancelar</button>
+                            <button type="submit" class="btn-primario">Salvar
+                                alterações</button>
+                        </footer>
+                    </form>
+                </div>
+            </div>
+            <!-- ---------- FIM MODAL ---------- -->
+        </main>
+
+    </div>
+
+</body>
+
+</html>

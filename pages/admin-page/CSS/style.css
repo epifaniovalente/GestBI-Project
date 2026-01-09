@@ -436,6 +436,21 @@ table tbody tr td {
     white-space: nowrap;
 }
 
+.tag-pendente {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.tag-concluido {
+    background: #d4edda;
+    color: #155724;
+}
+
+.tag-cancelado {
+    background: #f8d7da;
+    color: #721c24;
+}
+
 table tbody tr td button {
     background: transparent;
     font-size: var(--text-14);
