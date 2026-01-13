@@ -164,7 +164,8 @@
     animation: surgir .3s ease;
 }
 
-.form.activo, .comprovativo {
+.form.activo,
+.comprovativo {
     display: block;
 }
 
@@ -423,7 +424,8 @@ article#validade {
 #voltar.activo {
     display: block;
 }
- /* --------- */
+
+/* --------- */
 
 /* -------- PROPOSTA DE MARCAÇAO -------- */
 
@@ -571,7 +573,8 @@ article#validade {
     flex-direction: column;
     gap: var(--gap-12);
     padding: var(--gap-16);
-    p{
+
+    p {
         color: var(--text);
     }
 }
@@ -588,7 +591,7 @@ article#validade {
     }
 }
 
-#renovacao{
+#renovacao {
     background: transparent;
 }
 
@@ -607,7 +610,8 @@ article#validade {
     list-style-position: inside;
 }
 
-#renovacao h2, #segundaViaDuplicado h2 {
+#renovacao h2,
+#segundaViaDuplicado h2 {
     font-size: var(--text-24);
     color: var(--text);
     padding: 6px;
@@ -648,7 +652,7 @@ article#validade {
     gap: 16px;
 }
 
-.BiMenores{
+.BiMenores {
     padding: 24px 24px;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -685,11 +689,11 @@ article#validade {
 
 }
 
-#docObrigatorio i{
+#docObrigatorio i {
     color: var(--accent);
 }
 
-#casosEspecias h2 i{
+#casosEspecias h2 i {
     color: rgb(177, 151, 4);
 }
 
@@ -724,7 +728,7 @@ article#validade {
     font-weight: 500;
 }
 
-.atendimento{
+.atendimento {
     display: flex;
     flex-direction: column;
     gap: var(--gap-12);
@@ -741,7 +745,7 @@ article#validade {
     color: var(--accent);
 }
 
-#atendPrioritario p{
+#atendPrioritario p {
     font-size: var(--text-14);
 }
 
@@ -808,7 +812,35 @@ article#validade {
 /* --------- COMPROVATIVO --------- */
 /* -------------------------------------- */
 
-.form-group-dados{
+@media print {
+    body{
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+    }
+    .site-header{
+        display: none !important;
+    }
+    .marcacao.container{
+        display: none !important;
+    }
+    .verification-icon-box{
+        display: none !important;
+    }
+    .comprovativo{
+        width: 100%;
+    }
+    .form-group-btn{
+        display: none !important;
+    }
+    .site-footer{
+        display: none !important;
+    }
+}
+
+.form-group-dados {
     display: flex;
     flex-direction: column;
     gap: var(--gap-12);
@@ -818,35 +850,35 @@ article#validade {
     padding: var(--gap-12);
     border-radius: var(--gap-12);
 
-    p{
+    p {
         color: var(--muted);
     }
-     
-    label{
+
+    label {
         color: var(--text);
     }
 }
 
-.form-group-dados article:first-child{
+.form-group-dados article:first-child {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #afafaf80;
 }
 
-.form-group-dados article:last-child{
+.form-group-dados article:last-child {
     display: flex;
     flex-direction: column;
     gap: var(--gap-8);
 }
 
-.form-group-dados article:last-child > div{
+.form-group-dados article:last-child>div {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.form-group-btn{
+.form-group-btn {
     margin-top: var(--gap-16);
     display: flex;
     align-items: center;
@@ -854,7 +886,7 @@ article#validade {
     gap: var(--gap-12);
 }
 
-.form-group-btn a{
+.form-group-btn a {
     font-weight: 500;
     color: var(--back-0);
     padding: var(--gap-8);
@@ -865,11 +897,16 @@ article#validade {
     text-align: center;
 }
 
-.form-group-btn a{
+.form-group-btn a {
     background-color: #afb1b6;
 }
 
-.form-group-btn a:last-child{
-    background-color: #d40d0d;
-    text-decoration: underline;
+.form-group-btn button {
+    width: 50%;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
 }
