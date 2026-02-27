@@ -178,14 +178,30 @@
 }
 
 .form input[type="text"],
-input[type="number"] {
+input[type="number"],
+select {
     width: 100%;
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.form input {
+.form select {
+    cursor: pointer;
+
+}
+
+#formSelect {
+    display: none;
+    animation: surgir .3s ease;
+}
+
+#formSelect.activo {
+    display: block;
+}
+
+.form input,
+select {
     outline: none;
 }
 
@@ -194,7 +210,8 @@ input[type="number"] {
 }
 
 .input-infor,
-#infor_ref {
+#infor_ref,
+.input-inforSelect {
     font-size: 12px;
     color: var(--muted);
     margin-top: 5px;
@@ -202,13 +219,15 @@ input[type="number"] {
 
 
 #detalhe.aviso,
-#infor_ref.aviso {
+#infor_ref.aviso,
+.input-inforSelect.aviso {
     color: var(--accent);
     font-weight: 500;
 }
 
 
-#detalhe.aviso::after {
+#detalhe.aviso::after,
+.input-inforSelect::after {
     content: "*";
     color: var(--accent);
 }
@@ -640,11 +659,9 @@ article#validade {
 
 
 /* -------------------------------------- */
-/* -------------------------------------- */
 /* --------- BI PARA MENORES --------- */
 /* -------------------------------------- */
-/* -------------------------------------- */
-
+/* 
 #menores {
     background-color: var(--dark);
     display: flex;
@@ -673,7 +690,6 @@ article#validade {
 
 #docObrigatorio,
 #casosEspecias {
-    /* background-color: var(--back-0); */
     padding: 0;
     margin-bottom: var(--gap-16);
     border-radius: var(--gap-8);
@@ -803,7 +819,7 @@ article#validade {
     border-radius: var(--gap-8);
     width: 100%;
     text-align: center;
-}
+} */
 
 
 
@@ -813,33 +829,39 @@ article#validade {
 /* -------------------------------------- */
 
 @media print {
-    body{
+    body {
         background-color: white;
         display: flex;
         align-items: center;
         justify-content: center;
         box-shadow: none;
     }
-    .site-header{
-        display: none !important;
-    }
-    .marcacao.container{
-        display: none !important;
-    }
-    .verification-icon-box{
-        display: none !important;
-    }
-    .comprovativo{
-        width: 100%;
-    }
-    .form-group-btn{
-        display: none !important;
-    }
-    .site-footer{
+
+    .site-header {
         display: none !important;
     }
 
-    .form-group-dados{
+    .marcacao.container {
+        display: none !important;
+    }
+
+    .verification-icon-box {
+        display: none !important;
+    }
+
+    .comprovativo {
+        width: 100%;
+    }
+
+    .form-group-btn {
+        display: none !important;
+    }
+
+    .site-footer {
+        display: none !important;
+    }
+
+    .form-group-dados {
         width: 70%;
     }
 }

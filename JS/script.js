@@ -80,6 +80,21 @@ function validarBI(numeroBi) {
     return true;
 }
 
+const select = document.getElementById("formSelect")
+const numeroBI = document.getElementById("numeroBi");
+
+function UpdateForm() {
+    const numerobi = document.getElementById("numeroBi").value;
+
+    if (numerobi) {
+        select.classList.add('activo')
+    } else {
+        select.classList.remove('activo')
+    }
+}
+
+numeroBI.addEventListener('change', UpdateForm)
+
 function verficar(event) {
     event.preventDefault();
     const numeroBi = document.getElementById("numeroBi").value;
@@ -117,9 +132,6 @@ function verficar(event) {
         content_res.classList.remove("caducado-c")
         proposta.classList.remove("activo")
 
-
-
-
         resultadoBi_titulo.textContent = "Bilhete de Identidade Válido"
         content_res.textContent = "O seu documento ainda está no prazo de validade. Não necessita de renovação neste momento."
     }
@@ -140,8 +152,9 @@ function verficar(event) {
         content_res.textContent = "O seu bilhete de identidade já encontra-se caducado. Pode proceder a marcação."
     }
 
-
 }
+
+
 
 
 // --------- VALIDAÇÃO DO FORMULÁRIO DE CANCELAR MARCAÇÃO ---------
